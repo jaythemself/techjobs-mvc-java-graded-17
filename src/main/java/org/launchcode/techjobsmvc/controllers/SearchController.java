@@ -25,3 +25,13 @@ public class SearchController {
 
 }
 
+// Task 3: Complete SearchController
+// Add displaySearchResults handler method to SearchController
+//     Use the correct annotation for the method. To configure the correct mapping type and route, refer
+//         to the form tag in the search.html template (Use @GetMapping or @PostMapping, not @RequestMapping)
+//     Should take in a Model parameter and take in two other parameters specifying type of search and search term.
+//     Use correct annotation and names (corresponding form field names in search.html) to properly pass by Spring Boot
+//     If user searches "all" or leave the box empty call findAll() from JobData, otherwise search findByColumnAndValue
+//         Store results in a 'jobs' ArrayList
+//     Pass 'jobs' into search.html view via the 'model' parameter
+//     Pass ListController.columnChoices into the view (as existing 'search' handler does)
