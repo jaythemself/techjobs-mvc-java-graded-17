@@ -36,18 +36,43 @@
 
   <hr />
 
-  <!-- TODO #4 - Loop over the search results to display all job fields. -->
+    <!-- Task 4: Display Search Results -->
+    <!-- Create loop to display each job passed in from the controller
+         Put the job results into a set of tables, similar to list-jobs view
+             Can reuse list-jobs.html code by defining a new "fragment" in that file, then including that fragment in search.html
+             For the fragment to work properly in both files the variables passed in by model.addAttribute() must use the same names -->
+
+    <!-- At this point all autograding tests should be passing. Right click org.launchcode.techjobs.mvc package in src/test/java
+            and select "Run tests in..." to make sure. Compare app's behavior/visual information to demo app. -->
+
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.id}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.name}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.employer}"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.location}"></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.positionType}"></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.coreCompetency}"></td>
+        </tr>
+    </table>
 
 </div>
 
 </body>
 </html>
-
-<!-- Task 4: Display Search Results -->
-<!-- Create loop to display each job passed in from the controller
-     Put the job results into a set of tables, similar to list-jobs view
-         Can reuse list-jobs.html code by defining a new "fragment" in that file, then including that fragment in search.html
-         For the fragment to work properly in both files the variables passed in by model.addAttribute() must use the same names -->
-
-<!-- At this point all autograding tests should be passing. Right click org.launchcode.techjobs.mvc package in src/test/java
-        and select "Run tests in..." to make sure. Compare app's behavior/visual information to demo app. -->
